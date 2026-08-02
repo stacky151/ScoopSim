@@ -96,7 +96,7 @@ export async function handleTicketButton(interaction: ButtonInteraction, parts: 
 
     const closeContainer = new ContainerBuilder().setAccentColor(0xED4245);
     closeContainer.addTextDisplayComponents(
-      new TextDisplayBuilder().setContent(`🔒 **Closing ticket channel in 5 seconds...** Thank you for contacting ScoopShack Support!`)
+      new TextDisplayBuilder().setContent(`🔒 **Closing ticket channel in 5 seconds...** Thank you for contacting ScoopSim Support!`)
     );
 
     await interaction.reply({

@@ -333,7 +333,7 @@ export async function buildAchievementsMessage(userId: string, currentTab: strin
 export default {
   data: new SlashCommandBuilder()
     .setName('achievements')
-    .setDescription('View your completed ScoopShack achievements and milestones!'),
+    .setDescription('View your completed ScoopSim achievements and milestones!'),
 
   async execute(interaction: ChatInputCommandInteraction) {
     const userId = interaction.user.id;

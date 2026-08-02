@@ -43,7 +43,7 @@ function buildExpBar(level: number, exp: number, expNeeded: number): string {
 export default {
   data: new SlashCommandBuilder()
     .setName('profile')
-    .setDescription('View your ScoopShack profile and empire stats.')
+    .setDescription('View your ScoopSim profile and empire stats.')
     .addUserOption(option =>
       option
         .setName('user')

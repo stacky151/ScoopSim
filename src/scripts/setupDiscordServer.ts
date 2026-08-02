@@ -15,7 +15,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
     { name: '💎 Prestige VIP', color: 0x3498DB, hoist: true, permissions: [] },
     { name: '🍦 Master Scoop', color: 0x2ECC71, hoist: true, permissions: [] },
     { name: '🚚 Catering Expeditor', color: 0xE67E22, hoist: true, permissions: [] },
-    { name: '🍧 ScoopShack Baron', color: 0x1ABC9C, hoist: true, permissions: [] }
+    { name: '🍧 ScoopSim Baron', color: 0x1ABC9C, hoist: true, permissions: [] }
   ];
 
   for (const roleDef of rolesToCreate) {
@@ -26,7 +26,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
         color: roleDef.color,
         hoist: roleDef.hoist,
         permissions: roleDef.permissions as any,
-        reason: 'ScoopShack Automated Hub Setup'
+        reason: 'ScoopSim Automated Hub Setup'
       }).catch(e => log.push(`⚠️ Failed to create role ${roleDef.name}: ${e.message}`));
       log.push(`✅ Created role: ${roleDef.name}`);
     } else {
@@ -44,7 +44,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
           bannerAsset: 'channel_rules.jpg',
           title: '📜 OFFICIAL SERVER RULES & INFORMATION',
           content: `# 📜 OFFICIAL SERVER RULES & INFORMATION\n` +
-                   `Welcome to the **Official ScoopShack Discord Hub**! To maintain a premium environment for all ice cream barons, please strictly follow these directives:\n\n` +
+                   `Welcome to the **Official ScoopSim Discord Hub**! To maintain a premium environment for all ice cream barons, please strictly follow these directives:\n\n` +
                    `1. 🤝 **Be Respectful**: Treat all players, staff, and community members with respect.\n` +
                    `2. 🚫 **No Spamming or Exploiting**: Command spamming or exploiting bugs will result in an immediate empire ban.\n` +
                    `3. 📢 **Keep Channels Relevant**: Use bot channels for bot gameplay and support channels for help.\n` +
@@ -54,8 +54,8 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
           name: 'announcements',
           readOnly: true,
           bannerAsset: 'channel_rules.jpg',
-          title: '📢 OFFICIAL SCOOPSHACK ANNOUNCEMENTS',
-          content: `# 📢 OFFICIAL SCOOPSHACK ANNOUNCEMENTS\n` +
+          title: '📢 OFFICIAL SCOOPSIM ANNOUNCEMENTS',
+          content: `# 📢 OFFICIAL SCOOPSIM ANNOUNCEMENTS\n` +
                    `Stay updated with major game releases, event announcements, and dev broadcasts!\n` +
                    `Turn on channel notifications so you never miss an official announcement.`
         },
@@ -87,7 +87,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
           bannerAsset: 'channel_rules.jpg',
           title: '💬 GENERAL COMMUNITY LOUNGE',
           content: `# 💬 GENERAL COMMUNITY LOUNGE\n` +
-                   `Talk strategy, discuss business expansion, and hang out with fellow ScoopShack ice cream barons!`
+                   `Talk strategy, discuss business expansion, and hang out with fellow ScoopSim ice cream barons!`
         },
         {
           name: 'flex-your-empire',
@@ -141,7 +141,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
       ]
     },
     {
-      name: '🤖 SCOOPSHACK BOT ZONES',
+      name: '🤖 SCOOPSIM BOT ZONES',
       channels: [
         {
           name: 'bot-commands',
@@ -149,7 +149,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
           bannerAsset: 'channel_rules.jpg',
           title: '🍦 BOT COMMANDS ZONE',
           content: `# 🍦 BOT COMMANDS ZONE\n` +
-                   `Execute all your ScoopShack slash commands here! Type /help for a full command overview.`
+                   `Execute all your ScoopSim slash commands here! Type /help for a full command overview.`
         },
         {
           name: 'daily-and-spins',
@@ -174,7 +174,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
       category = await guild.channels.create({
         name: catDef.name,
         type: ChannelType.GuildCategory,
-        reason: 'ScoopShack Automated Setup'
+        reason: 'ScoopSim Automated Setup'
       });
       log.push(`📁 Created Category: ${catDef.name}`);
     } else {
@@ -200,7 +200,7 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
           type: ChannelType.GuildText,
           parent: category.id,
           permissionOverwrites,
-          reason: 'ScoopShack Automated Setup'
+          reason: 'ScoopSim Automated Setup'
         });
         log.push(`💬 Created Channel: #${chanDef.name}`);
       } else {
@@ -257,6 +257,6 @@ export async function setupOfficialDiscordServer(guild: Guild): Promise<{ succes
     }
   }
 
-  log.push(`🎉 OFFICIAL SCOOPSHACK DISCORD SERVER SETUP COMPLETE!`);
+  log.push(`🎉 OFFICIAL SCOOPSIM DISCORD SERVER SETUP COMPLETE!`);
   return { success: true, log };
 }

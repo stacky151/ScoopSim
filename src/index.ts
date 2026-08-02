@@ -28,7 +28,7 @@ client.commands = new Collection();
 
 async function bootstrap() {
   try {
-    console.log('Starting ScoopShack Bot...');
+    console.log('Starting ScoopSim Bot...');
     await prisma.$connect();
     console.log('Database connected successfully via Prisma.');
 

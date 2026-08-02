@@ -17,7 +17,7 @@ export function buildChangelogAlertMessage(changelog: ChangelogData) {
 
   container.addMediaGalleryComponents(
     new MediaGalleryBuilder().addItems(
-      new MediaGalleryItemBuilder().setURL('attachment://changelog_banner.png').setDescription('ScoopShack Update Broadcast')
+      new MediaGalleryItemBuilder().setURL('attachment://changelog_banner.png').setDescription('ScoopSim Update Broadcast')
     )
   );
 

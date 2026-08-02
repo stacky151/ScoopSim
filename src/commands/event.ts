@@ -53,7 +53,7 @@ export default {
         `• **Event Ends**: <t:${endsTimestamp}:R>\n\n` +
         `### 🏆 Global Reward Tier\n` +
         `• **Milestone Target**: Serve 500,000 scoops globally across all stands.\n` +
-        `• **Reward**: Unlocks **+100% Cash Sales Multiplier** for all ScoopShack players worldwide for 48 hours!`
+        `• **Reward**: Unlocks **+100% Cash Sales Multiplier** for all ScoopSim players worldwide for 48 hours!`
       )
     );
 

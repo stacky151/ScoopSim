@@ -108,7 +108,7 @@ for (let id = 1; id <= 100; id++) {
   ctx.fillStyle = '#F0F9FF';
   ctx.font = 'bold 22px sans-serif';
   ctx.textAlign = 'center';
-  ctx.fillText('SCOOPSHACK GOURMET GELATO', 600, 56);
+  ctx.fillText('SCOOPSIM GOURMET GELATO', 600, 56);
 
   // 5. Customer Character NPC (Front of Counter)
   const custX = 600;
@@ -166,7 +166,7 @@ for (let id = 1; id <= 100; id++) {
 
   ctx.fillStyle = '#D97706';
   ctx.font = 'bold 16px sans-serif';
-  ctx.fillText(`ORDER #${id} • 100% OFFICIAL SCOOPSHACK DATA`, bubbleX, bubbleY + 22);
+  ctx.fillText(`ORDER #${id} • 100% OFFICIAL SCOOPSIM DATA`, bubbleX, bubbleY + 22);
 
   // Write PNG buffer to order_X.jpg
   const buffer = canvas.toBuffer('image/jpeg');

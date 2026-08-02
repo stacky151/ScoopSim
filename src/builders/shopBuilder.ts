@@ -103,7 +103,7 @@ export async function buildShopMessage(userId: string, category: string = 'food'
 
   container.addTextDisplayComponents(
     new TextDisplayBuilder().setContent(
-      `# ${e('store')} ScoopShack Store - ${categoryLabels[category] || 'Menu'}\n` +
+      `# ${e('store')} ScoopSim Store - ${categoryLabels[category] || 'Menu'}\n` +
       `${e('wallet')} **Your Balance**: $${user.money.toLocaleString()} | ${e('star')} **Level**: ${user.level}\n` +
       `*${categoryBriefs[category] || ''}*`
     )

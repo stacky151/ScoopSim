@@ -1,4 +1,4 @@
-# 🍨 ScoopShack — Discord Ice Cream Empire Simulator
+# 🍨 ScoopSim — Discord Ice Cream Empire Simulator
 > **Official Submission for Top.gg Summer Bot Jam 2026** ☀️
 
 [![Top.gg Summer Bot Jam 2026](https://img.shields.io/badge/Top.gg-Summer%20Bot%20Jam%202026-FFD700?style=for-the-badge&logo=discord)](https://top.gg)
@@ -9,9 +9,9 @@
 ---
 
 ## ☀️ Summer Theme Alignment & Bot Jam Overview
-**ScoopShack** is the ultimate summer-themed Discord economy & business simulation game where players build, manage, and expand a global ice cream franchise empire!
+**ScoopSim** is the ultimate summer-themed Discord economy & business simulation game where players build, manage, and expand a global ice cream franchise empire!
 
-From beach boardwalk stands in Miami and Venice Beach to real-time dynamic weather heatwaves, mobile catering truck expeditions, and tropical fruit sorbet crafting, ScoopShack embodies the spirit of summer fun!
+From beach boardwalk stands in Miami and Venice Beach to real-time dynamic weather heatwaves, mobile catering truck expeditions, and tropical fruit sorbet crafting, ScoopSim embodies the spirit of summer fun!
 
 ---
 
@@ -63,7 +63,7 @@ From beach boardwalk stands in Miami and Venice Beach to real-time dynamic weath
 
 ## 🔗 Links & Resources
 - 💬 **Official Discord Community**: [https://discord.gg/WJnDk43hw3](https://discord.gg/WJnDk43hw3)
-- ➕ **Invite ScoopShack Bot**: [Invite Link](https://discord.com/api/oauth2/authorize?client_id=763123509417214022&permissions=274878287936&scope=bot%20applications.commands)
+- ➕ **Invite ScoopSim Bot**: [Invite Link](https://discord.com/api/oauth2/authorize?client_id=763123509417214022&permissions=274878287936&scope=bot%20applications.commands)
 
 ---
 *Built for Top.gg Summer Bot Jam 2026.* 🍦☀️

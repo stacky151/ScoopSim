@@ -41,7 +41,7 @@ export async function handleProfileButton(interaction: ButtonInteraction, parts:
           take: 10
         });
         const medals = [e('medal_gold'), e('medal_silver'), e('medal_bronze')];
-        let text = `# ${e('trophy')} ScoopShack Leaderboard\n`;
+        let text = `# ${e('trophy')} ScoopSim Leaderboard\n`;
         topUsers.forEach((usr: any, idx: number) => {
           const medal = medals[idx] || `${idx + 1}.`;
           text += `${medal} <@${usr.id}> • **$${usr.money.toLocaleString()}** (Level ${usr.level})\n`;

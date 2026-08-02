@@ -85,7 +85,7 @@ export async function handleAdminHubInteraction(interaction: any, parts: string[
             await prisma.bannedServer.create({
               data: { id: guildId, reason: 'Administrator Blacklist' }
             });
-            statusText = `🚫 Banned server \`${guildId}\` from ScoopShack access.`;
+            statusText = `🚫 Banned server \`${guildId}\` from ScoopSim access.`;
           }
         });
 

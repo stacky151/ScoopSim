@@ -18,7 +18,7 @@ export async function buildAdminHubMessage(client: Client, userId: string, activ
 
   container.addTextDisplayComponents(
     new TextDisplayBuilder().setContent(
-      `# 👑 ScoopShack Central Intelligence — Admin Command Hub\n` +
+      `# 👑 ScoopSim Central Intelligence — Admin Command Hub\n` +
       `*Production Network Management, Server Telemetry & Live Operations Studio*\n\n` +
       `🌐 **Connected Servers**: **${connectedGuilds.length} Guilds** | 👥 **Registered Users**: **${totalUsers.toLocaleString()}** | ⚡ **Network Commands**: **${totalCommandsNet.toLocaleString()}**`
     )
@@ -100,7 +100,7 @@ export async function buildAdminHubMessage(client: Client, userId: string, activ
     container.addActionRowComponents(actionRow);
   } else if (activeTab === 'users') {
     let text = `## 👥 User Operations & Blacklist Center\n` +
-      `Credit funds or globally manage user access across ScoopShack.\n\n` +
+      `Credit funds or globally manage user access across ScoopSim.\n\n` +
       `• **Banned Users Count**: **${await prisma.bannedUser.count()}**\n` +
       `• **Banned Servers Count**: **${await prisma.bannedServer.count()}**\n`;
 

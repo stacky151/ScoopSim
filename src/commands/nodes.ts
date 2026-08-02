@@ -82,7 +82,7 @@ function buildNodesView(currentTab: string): ContainerBuilder {
     container.addTextDisplayComponents(
       new TextDisplayBuilder().setContent(
         `# ${e('store')} Node Status Monitor\n` +
-        `Real-time diagnostic display of the ScoopShack bot network cluster.\n\n` +
+        `Real-time diagnostic display of the ScoopSim bot network cluster.\n\n` +
         `### 📊 Network Health Summary\n` +
         `* **Global Network Status:** \`Optimal\`\n` +
         `* **Connected Cluster Nodes:** \`${onlineCount} / ${totalCount}\` connected\n` +

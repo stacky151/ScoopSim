@@ -27,7 +27,7 @@ const CATEGORY_CONFIG: Record<string, { label: string; color: number; icon: stri
 export default {
   data: new SlashCommandBuilder()
     .setName('changelog')
-    .setDescription('View the latest ScoopShack update notes and patch history.'),
+    .setDescription('View the latest ScoopSim update notes and patch history.'),
 
   async execute(interaction: ChatInputCommandInteraction) {
     const userId = interaction.user.id;
@@ -55,7 +55,7 @@ export default {
     if (logs.length === 0) {
       container.addTextDisplayComponents(
         new TextDisplayBuilder().setContent(
-          `# ${e('clipboard')} ScoopShack Changelog\n` +
+          `# ${e('clipboard')} ScoopSim Changelog\n` +
           `No updates have been posted yet. Check back soon!`
         )
       );
@@ -65,8 +65,8 @@ export default {
 
       container.addTextDisplayComponents(
         new TextDisplayBuilder().setContent(
-          `# ${e('clipboard')} ScoopShack Changelog${hasUnread ? `  ${e('dot_red')} **NEW**` : ''}\n` +
-          `Latest updates and patch notes for ScoopShack.`
+          `# ${e('clipboard')} ScoopSim Changelog${hasUnread ? `  ${e('dot_red')} **NEW**` : ''}\n` +
+          `Latest updates and patch notes for ScoopSim.`
         )
       );
 

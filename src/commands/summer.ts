@@ -31,7 +31,7 @@ export default {
     container.addTextDisplayComponents(
       new TextDisplayBuilder().setContent(
         `# ☀️ TOP.GG SUMMER BOT JAM 2026 — BOARDWALK FESTIVAL\n` +
-        `Welcome to the official **Summer Bot Jam 2026 Celebration**! ScoopShack is celebrating the ultimate summer season with exclusive heatwave boosts, tropical flavors, and festival rewards!\n\n` +
+        `Welcome to the official **Summer Bot Jam 2026 Celebration**! ScoopSim is celebrating the ultimate summer season with exclusive heatwave boosts, tropical flavors, and festival rewards!\n\n` +
         `### 🍧 Summer Jam 2026 Special Features\n` +
         `• 🥭 **Tropical Flavor Unlocks**: Mango Sorbet & Watermelon Splash available in \`/shop\`!\n` +
         `• 🏖️ **Sunny Beach Boardwalk Location**: Unlock the exclusive beachside stand in \`/map\`!\n` +
@@ -49,7 +49,7 @@ export default {
         .setLabel('☀️ Claim $10,000 Summer Festival Pack')
         .setStyle(ButtonStyle.Success),
       new ButtonBuilder()
-        .setLabel('💬 Join Official ScoopShack Discord')
+        .setLabel('💬 Join Official ScoopSim Discord')
         .setURL('https://discord.gg/WJnDk43hw3')
         .setStyle(ButtonStyle.Link)
     );

@@ -108,12 +108,12 @@ export async function handleGiveawayModalSubmit(interaction: ModalSubmitInteract
     await safeTransaction(async () => {
       if (existingBan) {
         await prisma.bannedUser.delete({ where: { id: targetUserId } });
-        actionText = `✅ Unbanned user <@${targetUserId}> from ScoopShack!`;
+        actionText = `✅ Unbanned user <@${targetUserId}> from ScoopSim!`;
       } else {
         await prisma.bannedUser.create({
           data: { id: targetUserId, reason }
         });
-        actionText = `⛔ Banned user <@${targetUserId}> from ScoopShack. Reason: *${reason}*`;
+        actionText = `⛔ Banned user <@${targetUserId}> from ScoopSim. Reason: *${reason}*`;
       }
     });
 

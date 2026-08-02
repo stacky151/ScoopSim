@@ -55,7 +55,7 @@ export async function concludeGiveaway(client: Client, giveawayId: string): Prom
           `• 🏆 **Total Winners**: **${winningUserIds.length} Winner(s)**\n` +
           `• 👥 **Winning Accounts**: ${winningUserIds.map(id => `<@${id}>`).join(', ')}\n\n` +
           `🎫 **HOW TO CLAIM YOUR PRIZE**:\n` +
-          `1. Click the button below to join our official **ScoopShack Discord Community**.\n` +
+          `1. Click the button below to join our official **ScoopSim Discord Community**.\n` +
           `2. Open a ticket in **#create-a-ticket** or **#support** with your prize screenshot to claim your reward!\n\n` +
           `💬 *Congratulations on your victory, Ice Cream Baron!*`
         )
@@ -63,11 +63,11 @@ export async function concludeGiveaway(client: Client, giveawayId: string): Prom
 
       const actionRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
         new ButtonBuilder()
-          .setLabel('💬 Join ScoopShack Discord to Claim')
+          .setLabel('💬 Join ScoopSim Discord to Claim')
           .setURL(discordCommunityUrl)
           .setStyle(ButtonStyle.Link),
         new ButtonBuilder()
-          .setLabel('➕ Invite ScoopShack Bot')
+          .setLabel('➕ Invite ScoopSim Bot')
           .setURL(inviteUrl)
           .setStyle(ButtonStyle.Link)
       );

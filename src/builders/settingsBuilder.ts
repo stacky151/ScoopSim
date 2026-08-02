@@ -13,7 +13,7 @@ export async function buildSettingsMessage(userId: string) {
   const container = new ContainerBuilder().setAccentColor(0x7F00FF);
   container.addTextDisplayComponents(
     new TextDisplayBuilder().setContent(
-      `# ${e('gear')} ScoopShack Settings\n` +
+      `# ${e('gear')} ScoopSim Settings\n` +
       `Customize your Ice Cream Stand preferences.\n\n` +
       `• **DM Notifications**: ${user.notifyEmpty ? `${e('dot_green')} Enabled (Receive alerts when stock/cleanliness runs out)` : `${e('dot_red')} Disabled`}\n` +
       `• **Stands Owned**: ${user.stands.length} stands`

@@ -230,7 +230,7 @@ export async function handleMapInteraction(
     const successContainer = new ContainerBuilder().setAccentColor(0x48BB78);
     successContainer.addTextDisplayComponents(
       new TextDisplayBuilder().setContent(
-        `# 🎉 Welcome to ScoopShack! ${country} Stand Open! ${e('scoop')}\n` +
+        `# 🎉 Welcome to ScoopSim! ${country} Stand Open! ${e('scoop')}\n` +
         `Congratulations on establishing your brand new ice cream stand in **${country}**! Your franchise journey begins now!\n\n` +
         `### 📜 Quick Starter Guide:\n` +
         `• 🍨 **Initial Stock**: **50 Scoops** of Vanilla Gelato loaded & ready to serve!\n` +

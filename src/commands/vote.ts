@@ -20,7 +20,7 @@ import { e } from '../constants/emojis';
 export default {
   data: new SlashCommandBuilder()
     .setName('vote')
-    .setDescription('Vote for ScoopShack on Discord bot lists to unlock double cash boosts!'),
+    .setDescription('Vote for ScoopSim on Discord bot lists to unlock double cash boosts!'),
 
   async execute(interaction: ChatInputCommandInteraction) {
     const container = new ContainerBuilder().setAccentColor(0x5865F2);
@@ -38,8 +38,8 @@ export default {
 
     container.addTextDisplayComponents(
       new TextDisplayBuilder().setContent(
-        `# 🗳️ Support ScoopShack & Claim Vote Boosts!\n` +
-        `Help grow the ScoopShack community by voting on Top.gg and Discord bot lists. Every vote supports future game updates and rewards your empire with exclusive buffs!\n\n` +
+        `# 🗳️ Support ScoopSim & Claim Vote Boosts!\n` +
+        `Help grow the ScoopSim community by voting on Top.gg and Discord bot lists. Every vote supports future game updates and rewards your empire with exclusive buffs!\n\n` +
         `### 🎁 Vote Reward Perks\n` +
         `• ⚡ **12-Hour Double Cash Boost** (+100% sales payouts across all stands).\n` +
         `• 💎 **+3 Bonus Prestige Tokens** delivered instantly.\n` +

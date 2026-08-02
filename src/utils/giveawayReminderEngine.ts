@@ -66,7 +66,7 @@ export async function trackCommandAndRemind(interaction: CommandInteraction) {
 
   container.addTextDisplayComponents(
     new TextDisplayBuilder().setContent(
-      `# 🎉 OFFICIAL SCOOPSHACK GIVEAWAY ANNOUNCEMENT!\n` +
+      `# 🎉 OFFICIAL SCOOPSIM GIVEAWAY ANNOUNCEMENT!\n` +
       `**${activeGiveaway.title}**\n\n` +
       `*${activeGiveaway.description}*\n\n` +
       `• ⏰ **Time Remaining**: **${hoursLeft} Hours** (Ends <t:${Math.floor(activeGiveaway.endsAt.getTime() / 1000)}:R>)\n` +
@@ -153,17 +153,17 @@ export async function handleGiveawayEntryButton(interaction: any, giveawayId: st
         `• ⏰ **Ends**: <t:${Math.floor(giveaway.endsAt.getTime() / 1000)}:R>\n` +
         `• 🏆 **Winners**: **${giveaway.winnerCount} Lucky Winner(s)**\n\n` +
         `📢 **Want access to exclusive Discord-only giveaways and updates?**\n` +
-        `Join our official ScoopShack Discord Community below! If you win when drawing occurs, create a ticket in **#create-a-ticket** or **#support** to claim your prize!`
+        `Join our official ScoopSim Discord Community below! If you win when drawing occurs, create a ticket in **#create-a-ticket** or **#support** to claim your prize!`
       )
     );
 
     const dmRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
       new ButtonBuilder()
-        .setLabel('💬 Join Official ScoopShack Discord')
+        .setLabel('💬 Join Official ScoopSim Discord')
         .setURL(discordCommunityUrl)
         .setStyle(ButtonStyle.Link),
       new ButtonBuilder()
-        .setLabel('➕ Invite ScoopShack Bot')
+        .setLabel('➕ Invite ScoopSim Bot')
         .setURL(inviteUrl)
         .setStyle(ButtonStyle.Link)
     );
@@ -184,11 +184,11 @@ export async function handleGiveawayEntryButton(interaction: any, giveawayId: st
 
   const replyRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
     new ButtonBuilder()
-      .setLabel('💬 Join Official ScoopShack Discord')
+      .setLabel('💬 Join Official ScoopSim Discord')
       .setURL(discordCommunityUrl)
       .setStyle(ButtonStyle.Link),
     new ButtonBuilder()
-      .setLabel('➕ Invite ScoopShack Bot')
+      .setLabel('➕ Invite ScoopSim Bot')
       .setURL(inviteUrl)
       .setStyle(ButtonStyle.Link)
   );

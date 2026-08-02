@@ -70,7 +70,7 @@ export async function buildLeaderboardMessage(userId: string, activeType: string
     }
   }) + 1;
 
-  let leaderboardText = `# 🏆 ScoopShack Leaderboards — ${categoryTitle} (${scopeTitle})\n\n`;
+  let leaderboardText = `# 🏆 ScoopSim Leaderboards — ${categoryTitle} (${scopeTitle})\n\n`;
 
   const medals = ['🥇', '🥈', '🥉'];
   topUsers.forEach((usr, idx) => {
@@ -155,7 +155,7 @@ export async function buildLeaderboardMessage(userId: string, activeType: string
 export default {
   data: new SlashCommandBuilder()
     .setName('leaderboard')
-    .setDescription('View the top ice cream barons in ScoopShack!')
+    .setDescription('View the top ice cream barons in ScoopSim!')
     .addStringOption(option =>
       option.setName('type')
         .setDescription('The category to display')

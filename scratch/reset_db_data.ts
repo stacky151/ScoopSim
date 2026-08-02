@@ -1,7 +1,7 @@
 import { prisma } from '../src/index';
 
 async function resetData() {
-  console.log('Resetting ScoopShack user game data...');
+  console.log('Resetting ScoopSim user game data...');
   await prisma.userQuest.deleteMany({});
   await prisma.worker.deleteMany({});
   await prisma.userInventory.deleteMany({});

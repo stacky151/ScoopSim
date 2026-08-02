@@ -1,6 +1,6 @@
-# ScoopShack — Complete Production Roadmap & Architecture Blueprint
+# ScoopSim — Complete Production Roadmap & Architecture Blueprint
 
-This document serves as the definitive engineering roadmap and architectural specification to complete all remaining systems of the ScoopShack Discord Bot.
+This document serves as the definitive engineering roadmap and architectural specification to complete all remaining systems of the ScoopSim Discord Bot.
 
 ---
 
@@ -130,7 +130,7 @@ export interface ActiveEvent {
 ---
 
 ## 4. Visual Themes & Custom Stands
-Using alternative background skins and layouts in [canvasRenderer.ts](file:///C:/Users/selis/Desktop/Discord%20bots/ScoopShack/src/utils/canvasRenderer.ts).
+Using alternative background skins and layouts in [canvasRenderer.ts](file:///C:/Users/selis/Desktop/Discord%20bots/ScoopSim/src/utils/canvasRenderer.ts).
 
 ### Theme Render Config
 ```typescript

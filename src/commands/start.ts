@@ -109,7 +109,7 @@ export default {
     const container = new ContainerBuilder().setAccentColor(0xFFA07A);
     container.addTextDisplayComponents(
       new TextDisplayBuilder().setContent(
-        `# ${e('scoop')} Welcome to ScoopShack! ${e('scoop')}\n` +
+        `# ${e('scoop')} Welcome to ScoopSim! ${e('scoop')}\n` +
         `You are about to start your very own Ice Cream Stand empire!\n\n` +
         `To begin, you must select your starting country. USA is unlocked by default:\n\n` +
         `${e('flag_usa')} **USA**: Loves *Vanilla* (1.5x favorite price multiplier)\n\n` +

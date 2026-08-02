@@ -4,7 +4,7 @@ import { e } from '../constants/emojis';
 export default {
   data: new SlashCommandBuilder()
     .setName('discord')
-    .setDescription('Join the official ScoopShack Discord Community & invite the bot!'),
+    .setDescription('Join the official ScoopSim Discord Community & invite the bot!'),
 
   async execute(interaction: ChatInputCommandInteraction) {
     const botClientId = interaction.client.user?.id || '763123509417214022';
@@ -15,14 +15,14 @@ export default {
 
     container.addTextDisplayComponents(
       new TextDisplayBuilder().setContent(
-        `# 💬 Official ScoopShack Community & Bot Invite Hub\n` +
+        `# 💬 Official ScoopSim Community & Bot Invite Hub\n` +
         `Join our thriving community of ice cream barons, participate in **server-exclusive giveaways**, get instant dev updates, and expand your franchise empire!\n\n` +
         `### ⭐ Community Perks & Benefits\n` +
         `• 🎁 **Exclusive Server-Only Giveaways**: Cash jackpots, Prestige Tokens, and custom stand themes!\n` +
         `• 📢 **Patch Updates & Sneak Peeks**: Direct access to incoming game updates and feature voting.\n` +
         `• 💬 **Baron Trading & Guild Recruitment**: Connect with top players and recruit members for your franchise guild.\n` +
-        `• ➕ **Bot Installation**: Add ScoopShack to your server with strictly required permissions!\n\n` +
-        `-# Click below to join the community or add ScoopShack to your server.`
+        `• ➕ **Bot Installation**: Add ScoopSim to your server with strictly required permissions!\n\n` +
+        `-# Click below to join the community or add ScoopSim to your server.`
       )
     );
 
@@ -30,11 +30,11 @@ export default {
 
     const buttonRow = new ActionRowBuilder<ButtonBuilder>().addComponents(
       new ButtonBuilder()
-        .setLabel('💬 Join Official ScoopShack Discord')
+        .setLabel('💬 Join Official ScoopSim Discord')
         .setURL(discordCommunityUrl)
         .setStyle(ButtonStyle.Link),
       new ButtonBuilder()
-        .setLabel('➕ Invite ScoopShack Bot to Your Server')
+        .setLabel('➕ Invite ScoopSim Bot to Your Server')
         .setURL(inviteUrl)
         .setStyle(ButtonStyle.Link)
     );

@@ -6,7 +6,7 @@ import { buildSettingsMessage } from '../builders/settingsBuilder';
 export default {
   data: new SlashCommandBuilder()
     .setName('settings')
-    .setDescription('Configure your ScoopShack notifications and customize your stand!'),
+    .setDescription('Configure your ScoopSim notifications and customize your stand!'),
 
   async execute(interaction: ChatInputCommandInteraction) {
     const userId = interaction.user.id;
