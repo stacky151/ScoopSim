@@ -5,5 +5,6 @@ build
 .env.*
 *.db
 *.sqlite
+*.zip
 /generated/prisma
 .DS_Store
