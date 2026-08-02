@@ -47,6 +47,31 @@ From beach boardwalk stands in Miami and Venice Beach to real-time dynamic weath
 
 ---
 
+## 🗺️ Project Future Roadmap (Post-Jam Expansion)
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     🍨 SCOOPSIM EMPIRE ROADMAP                          │
+└─────────────────────────────────────────────────────────────────────────┘
+   │
+   ├── 🚀 Phase 1 (Q3 2026): Guild Territory Conquest
+   │    ├── Cross-Server Franchise War Competitions
+   │    ├── B2B Corporate Guild Catering Contracts
+   │    └── Shared Guild War Vault Upgrades
+   │
+   ├── 📱 Phase 2 (Q4 2026): Web Dashboard & Mobile Companion
+   │    ├── Live Web Empire Telemetry (scoopsim.io)
+   │    ├── Real-Time Order Push Notifications
+   │    └── Interactive Visual Store Customizer
+   │
+   └── 🌐 Phase 3 (Q1 2027): Dynamic Global Trade Market
+        ├── Player-Driven Ingredient Stock Exchange
+        ├── Seasonal World Event Pass Systems
+        └── Multi-Tier Tournament Leaderboard Payouts
+```
+
+---
+
 ## 🛠️ Technology Stack & Architecture
 - **Language**: TypeScript (Strict ES2022)
 - **Framework**: Discord.js v14 (Components V2 API: `ContainerBuilder`, `TextDisplayBuilder`, `MediaGalleryBuilder`)
