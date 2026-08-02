@@ -57,7 +57,7 @@ From beach boardwalk stands in Miami and Venice Beach to real-time dynamic weath
 
 ## 🤖 AI Usage Disclosure Statement
 *In compliance with Top.gg Summer Bot Jam 2026 transparency guidelines:*
-- AI development assistants (Google Antigravity / Gemini) were utilized for code scaffolding, TypeScript type validation, architecture auditing, and generating clean 16:9 retro pixel art graphical assets. All business logic, database schemas, and Discord API integrations are fully verified and owned by the development team.
+- AI development assistant Gemini were utilized for generating clean 16:9 retro pixel art graphical assets. All business logic, database schemas, and Discord API integrations are fully verified and owned by the development team.
 
 ---
 
