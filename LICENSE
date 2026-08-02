@@ -1,0 +1,18 @@
+GNU AFFERO GENERAL PUBLIC LICENSE
+Version 3, 19 November 2007
+
+Copyright (C) 2026 ScoopSim Developer Team. All Rights Reserved.
+
+Everyone is permitted to copy and distribute verbatim copies of this license document, but changing it is not allowed.
+
+Preamble
+
+The GNU Affero General Public License is a free, copyleft license for software and other kinds of works, specifically designed to ensure cooperation with the community in the case of network server software.
+
+Whenever a program is modified, the new version must make available the full corresponding source code to all users interacting with it through a computer network (including Discord bot interactions).
+
+TERMS AND CONDITIONS
+
+1. Attribution & Copyright Notice: You must retain all copyright notices, official author credit, and repository links in all copies or substantial portions of the Software.
+2. Network Interaction Disclosure: If you run a modified or hosted version of this application on a network (such as a Discord Bot), you MUST make the complete source code available to all network users under this exact AGPL-3.0 license.
+3. No Unpermitted Re-Hosting: Unauthorized hosting of competing public Discord bot instances using this source code without express written consent from the author is strictly prohibited under DMCA regulations.

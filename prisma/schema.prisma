@@ -1,0 +1,296 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              String   @id // Discord User ID
+  money           Int      @default(100)
+  level           Int      @default(1)
+  exp             Int      @default(0)
+  rebirths        Int      @default(0)
+  
+  // Settings
+  notifyEmpty     Boolean  @default(true)
+  lastReadChangelogId String?
+  
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  stands          IceCreamStand[]
+  inventory       UserInventory[]
+  workers         Worker[]
+  quests          UserQuest[]
+  prestigeTokens  Int             @default(0)
+  equippedTheme   String          @default("default")
+  prestigeUpgrades PrestigeUpgrade[]
+  themes           UserTheme[]
+  guildMember      GuildMember?
+  trucks           CateringTruck[]
+  lastDaily        DateTime?
+  dailyStreak      Int             @default(0)
+  lastWheelSpin    DateTime?
+  achievements     UserAchievement[]
+}
+
+model GlobalEvent {
+  id             String   @id @default(uuid())
+  title          String
+  description    String
+  targetScoops   Int      @default(500000)
+  currentScoops  Int      @default(0)
+  startsAt       DateTime @default(now())
+  endsAt         DateTime
+  isCompleted    Boolean  @default(false)
+}
+
+model Guild {
+  id           String        @id @default(uuid())
+  name         String        @unique
+  tag          String
+  ownerId      String
+  level        Int           @default(1)
+  xp           Int           @default(0)
+  vaultBalance Int           @default(0)
+  createdAt    DateTime      @default(now())
+
+  members      GuildMember[]
+  perks        GuildPerk[]
+}
+
+model GuildMember {
+  id              String   @id @default(uuid())
+  guildId         String
+  userId          String   @unique
+  role            String   @default("MEMBER") // 'OWNER' | 'OFFICER' | 'MEMBER'
+  contributedCash Int      @default(0)
+  joinedAt        DateTime @default(now())
+
+  guild           Guild    @relation(fields: [guildId], references: [id], onDelete: Cascade)
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model GuildPerk {
+  id        String   @id @default(uuid())
+  guildId   String
+  type      String   // 'global_mult' | 'clean_rate' | 'event_bonus'
+  level     Int      @default(1)
+
+  guild     Guild    @relation(fields: [guildId], references: [id], onDelete: Cascade)
+
+  @@unique([guildId, type])
+}
+
+model CateringTruck {
+  id             String    @id @default(uuid())
+  userId         String
+  name           String    @default("Standard Ice Cream Truck")
+  level          Int       @default(1)
+  status         String    @default("IDLE") // 'IDLE' | 'ON_CONTRACT'
+  contractId     String?
+  contractName   String?
+  contractEndsAt DateTime?
+  rewardMoney    Int       @default(0)
+
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model IceCreamStand {
+  id              String   @id @default(uuid())
+  userId          String
+  name            String   @default("My Ice Cream Stand")
+  country         String   // e.g., 'USA', 'Italy', 'Japan'
+  
+  cleanliness     Int      @default(100) // 0-100, decreases over time
+  isActive        Boolean  @default(false) // True if /openstand is currently running
+  
+  unclaimedMoney  Int      @default(0)
+  notifiedEmpty   Boolean  @default(false)
+  lastUpdated     DateTime @default(now())
+
+  rating              Float    @default(5.0)
+  totalReviews        Int      @default(0)
+  totalCustomersServed Int     @default(0)
+
+  storageLevel        Int      @default(1)
+  interestLevel       Int      @default(1)
+  activeDurationLevel Int      @default(1)
+  activeUntil         DateTime?
+
+  user            User     @relation(fields: [userId], references: [id])
+  batches         IceCreamBatch[]
+}
+
+model IceCreamBatch {
+  id              String   @id @default(uuid())
+  standId         String
+  flavor          String   // 'vanilla', 'chocolate', etc.
+  
+  scoops          Int      @default(0)
+  maxScoops       Int      @default(50)
+  cones           Int      @default(0)
+  maxCones        Int      @default(20)
+  pots            Int      @default(0)
+  maxPots         Int      @default(20)
+
+  smallCones      Int      @default(0)
+  maxSmallCones   Int      @default(20)
+  largeCones      Int      @default(0)
+  maxLargeCones   Int      @default(20)
+  smallBoxes      Int      @default(0)
+  maxSmallBoxes   Int      @default(20)
+  largeBoxes      Int      @default(0)
+  maxLargeBoxes   Int      @default(20)
+
+  stand           IceCreamStand @relation(fields: [standId], references: [id])
+}
+
+model Worker {
+  id              String   @id @default(uuid())
+  userId          String
+  type            String   // 'manager', 'cleaner', 'cashier', 'maker'
+  level           Int      @default(1)
+
+  user            User     @relation(fields: [userId], references: [id])
+}
+
+model ShopItem {
+  id            String   @id @default(uuid())
+  name          String   @unique
+  type          String   // 'food', 'item', 'decoration', 'equipment'
+  price         Int
+  levelRequired Int      @default(1)
+  iconUrl       String?
+  emoji         String?
+  description   String   @default("")
+
+  inventories   UserInventory[]
+}
+
+model UserInventory {
+  id        String   @id @default(uuid())
+  userId    String
+  itemId    String
+  quantity  Int      @default(1)
+
+  user      User     @relation(fields: [userId], references: [id])
+  item      ShopItem @relation(fields: [itemId], references: [id])
+
+  @@unique([userId, itemId])
+}
+
+model UserQuest {
+  id           String   @id @default(uuid())
+  userId       String
+  questType    String   // 'sell_scoops', 'clean_stand', 'collect_cash', etc.
+  description  String   @default("")
+  target       Int
+  progress     Int      @default(0)
+  rewardMoney  Int
+  rewardTokens Int      @default(0)
+  isWeekly     Boolean  @default(false)
+  completed    Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  user         User     @relation(fields: [userId], references: [id])
+
+  @@unique([userId, questType, isWeekly])
+}
+
+model Changelog {
+  id          String   @id @default(uuid())
+  title       String
+  description String
+  category    String   // 'update', 'bug_fix', 'big_update'
+  createdAt   DateTime @default(now())
+}
+
+model PrestigeUpgrade {
+  id        String   @id @default(uuid())
+  userId    String
+  type      String   // 'speed_mult' | 'tip_mult' | 'double_scoop_mult' | 'supplier_discount'
+  level     Int      @default(1)
+  
+  user      User     @relation(fields: [userId], references: [id])
+  
+  @@unique([userId, type])
+}
+
+model UserTheme {
+  id        String   @id @default(uuid())
+  userId    String
+  themeId   String   // 'cyberpunk' | 'retro' | 'luxury'
+  
+  user      User     @relation(fields: [userId], references: [id])
+  
+  @@unique([userId, themeId])
+}
+
+model UserAchievement {
+  id            String   @id @default(uuid())
+  userId        String
+  achievementId String
+  claimedAt     DateTime @default(now())
+
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, achievementId])
+}
+
+model BannedUser {
+  id        String   @id // Discord User ID
+  reason    String   @default("Violation of Terms of Service")
+  bannedAt  DateTime @default(now())
+}
+
+model BannedServer {
+  id        String   @id // Discord Guild ID
+  reason    String   @default("Blacklisted Guild")
+  bannedAt  DateTime @default(now())
+}
+
+model ServerStat {
+  guildId        String   @id // Discord Guild ID
+  commandCount   Int      @default(0)
+  lastActiveAt   DateTime @default(now())
+}
+
+model Giveaway {
+  id                String   @id @default(uuid())
+  title             String
+  description       String
+  endsAt            DateTime
+  maxEntriesPerUser Int      @default(1)
+  winnerCount       Int      @default(1)
+  isPublished       Boolean  @default(false)
+  isEnded           Boolean  @default(false)
+  winnerIds         String?  // Comma-separated list or JSON array of winning user IDs
+  createdBy         String
+  createdAt         DateTime @default(now())
+
+  entries           GiveawayEntry[]
+}
+
+model GiveawayEntry {
+  id         String   @id @default(uuid())
+  giveawayId String
+  userId     String
+  enteredAt  DateTime @default(now())
+
+  giveaway   Giveaway @relation(fields: [giveawayId], references: [id], onDelete: Cascade)
+
+  @@unique([giveawayId, userId])
+}
+
+model UserCommandTracker {
+  userId                   String   @id // Discord User ID
+  commandCount             Int      @default(0)
+  lastRemindedCommandCount Int      @default(0)
+  lastRemindedGiveawayId   String?
+  updatedAt                DateTime @updatedAt
+}
+
